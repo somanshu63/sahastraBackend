@@ -6,7 +6,8 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/index");
-
+const cors = require('cors');
+app.use(cors());
 var app = express();
 
 //connect database
