@@ -14,6 +14,7 @@ mongoose.connect(
   "mongodb+srv://somanshu63:2KtFV9MuDxx3Lixo@cluster0.3exu1fo.mongodb.net/"
 );
 
+app.set("view engine", "jade");
 
 
 app.use(logger("dev"));
