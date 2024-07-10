@@ -4,9 +4,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-const cors = require("cors");
+var cors = require("cors");
 var indexRouter = require("./routes/index");
-const cors = require("cors");
 var app = express();
 
 //connect database
