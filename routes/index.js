@@ -5,7 +5,7 @@ var Query = require("../models/faqs");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.json({ title: "Express" });
 });
 
 router.post("/contact-us", async function (req, res, next) {
