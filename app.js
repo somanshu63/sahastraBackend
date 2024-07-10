@@ -6,7 +6,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 const cors = require("cors");
 var indexRouter = require("./routes/index");
-
+const cors = require("cors");
 var app = express();
 
 //connect database
@@ -15,7 +15,7 @@ mongoose.connect(
 );
 
 // view engine setup
-app.set("view engine", "jade");
+app.set("views", path.join(__dirname, "views"));
 app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
