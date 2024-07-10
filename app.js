@@ -14,9 +14,7 @@ mongoose.connect(
   "mongodb+srv://somanshu63:2KtFV9MuDxx3Lixo@cluster0.3exu1fo.mongodb.net/"
 );
 
-// view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "jade");
+
 
 app.use(logger("dev"));
 app.use(express.json());
