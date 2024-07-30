@@ -2,10 +2,11 @@ var express = require("express");
 var router = express.Router();
 var ContactUs = require("../models/contactUs");
 var Query = require("../models/faqs");
+var Dashboard = require("../models/dashboard");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.json({ title: "Express" });
+  res.json({ title: "Welcome to Sahastra Architects" });
 });
 
 router.post("/contact-us", async function (req, res, next) {
@@ -47,6 +48,23 @@ router.put("/faq/:id", async function (req, res, next) {
     const query = await Query.findByIdAndUpdate(id, updateData);
     const updatedData = await Query.findById(id);
     res.json(updateData);
+  } catch (error) {
+    next(error);
+  }
+});
+router.post("/dashboard", async function (req, res, next) {
+  console.log(req.body);
+  try {
+    const update = await Dashboard.create(req.body);
+    res.json(update);
+  } catch (error) {
+    next(error);
+  }
+});
+router.get("/dashboard", async function (req, res, next) {
+  try {
+    const data = await Dashboard.find({});
+    res.json(data);
   } catch (error) {
     next(error);
   }
