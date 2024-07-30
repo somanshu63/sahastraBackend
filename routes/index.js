@@ -63,7 +63,7 @@ router.post("/dashboard", async function (req, res, next) {
 });
 router.get("/dashboard", async function (req, res, next) {
   try {
-    const data = await Dashboard.find({});
+    const data = await Dashboard.find({}).sort({ createdAt: -1 });
     res.json(data);
   } catch (error) {
     next(error);
